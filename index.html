@@ -1,23 +1,39 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello World</title>
+	</head>
+	<body>
+		<style>
+			body {margin:0;}
+			.red {background:red}
+			.blue {background:blue}
+			.green {background:green}
+			.yellow {background:yellow}
+			.contents-wrapper {
+				display:flex;
+			}
+			.section {
+				flex:1;
+				display:flex;
+				flex-direction:column;
+			}
+			.block {
+				flex:1;
+				//flex-direction:row;
+				height:50vh;
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+			}
+		</style>
+		<div class="contents-wrapper">
+			<div class="section left">
+				<div class="block red">One</div>
+				<div class="block blue">Two</div>
+			</div>
+			<div class="section right">
+				<div class="block green">Three</div>
+				<div class="block yellow">Four</div>
+			</div>
+		</div>
+	</body>
+</html>
